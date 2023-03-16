@@ -24,7 +24,7 @@
             <div
                 class="h-control-panel px-10 rounded-b-xl bg-control-panel-light-background border-t border-gray-200 flex items-center justify-between z-50 dark:bg-control-panel-dark-background dark:border-gray-900">
                 <div @click="loopSong()" class="dark:text-gray-400 cursor-pointer amplitude-shuffle"
-                    :class="loop ? 'text-blue-500 dark:text-blue-600' : ''">
+                    :class="loop ? 'text-blue-500 dark:text-sky-600' : ''">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -119,7 +119,13 @@ export default {
             this.pause_status = true;
         },
         onEnded() {
-            console.log("## OnEnded")
+            console.log("## OnEnded");
+            if (this.loop) {
+                this.playCurrentVideo()
+            } else {
+                this.play_status = false;
+                this.pause_status = true;
+            }
         },
         onPaused() {
 
