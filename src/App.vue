@@ -89,7 +89,7 @@ export default {
         return {
             dark: false,
             loop: 0,
-            video_id: 'Xz52VqNrA2o',
+            video_id: 'NP5KlYhgjew',
             play_status: false,
             pause_status: false,
         }
